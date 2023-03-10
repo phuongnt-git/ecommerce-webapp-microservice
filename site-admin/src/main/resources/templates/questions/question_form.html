@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <div th:replace="~{sidebar :: sidebar}"></div>
+
+    <div id="main">
+        <div th:replace="~{header :: header}"></div>
+
+        <div class="main-content container-fluid">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">[[${pageTitle}]]</h2>
+                    </div>
+
+                    <form method="post" th:action="@{/questions/save}" th:object="${question}">
+                        <input th:field="*{id}" type="hidden"/>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="product">Product</label>
+                                        <input class="form-control" readonly="readonly" th:field="*{product.name}" type="text" id="product"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="question">Question</label>
+                                        <textarea class="form-control" required rows="3" th:field="*{questionContent}" readonly id="question"></textarea>
+                                        <br>
+                                        Asked by <b>[[${question.asker.fullName}]]</b> on <b>[[${question.askTime}]]</b>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group"
+                                        <label for="answer">Answer</label>
+                                        <textarea class="form-control" rows="3" th:field="*{answer}" id="answer"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="approved">Approved</label>
+                                        <input th:field="*{approved}" type="checkbox" id="approved"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <div class="text-center">
+                                    <input class="btn btn-primary m-3" type="submit" value="Submit"/>
+                                    <input class="btn btn-danger" id="buttonCancel" type="button" value="Cancel"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div th:replace="~{modal_fragments :: warning_modal}"></div>
+                </div>
+            </section>
+        </div>
+        <div th:replace="~{footer:: footer}"></div>
+    </div>
+</div>
+
+<link th:href="@{/richtext/richtext.min.css}" rel="stylesheet">
+<script th:src="@{/richtext/jquery.richtext.min.js}"></script>
+<script th:src="@{/js/feather-icons/feather.min.js}"></script>
+<script th:src="@{/vendors/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/common_form.js}"></script>
+<script type="text/javascript">
+    moduleUrl = "[[@{/questions}]]";
+    $("#answer").richText();
+</script>
+</body>
+</html>

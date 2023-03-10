@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <span th:replace="~{sidebar :: sidebar}"></span>
+
+    <div id="main">
+        <span th:replace="~{header :: header}"></span>
+
+        <div class="main-content container-fluid">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">[[${pageTitle}]]</h2>
+                    </div>
+
+                    <form th:action="@{/reviews/save}" th:object="${review}" method="post">
+                        <input type="hidden" th:field="*{id}"/>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="product">Products:</label>
+                                        <input type="text" readonly class="form-control" th:value="${review.product.name}" id="product"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="customer">Customer:</label>
+                                        <input type="text" readonly class="form-control"
+                                               th:value="${review.customer.fullName}" id="customer"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="rating">Rating:</label>
+                                        <input type="text" readonly class="form-control" th:value="${review.rating}" id="rating"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="reviewTime">Review Time:</label>
+                                        <span th:text="${#dates.format(review.reviewTime, 'yyyy-MM-dd HH:mm:ss')}" id="reviewTime"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="headline">Headline:</label>
+                                        <input type="text" class="form-control" th:field="*{headline}" minlength="15" maxlength="128" required id="headline"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="comment">Comment:</label>
+                                        <textarea rows="8" class="form-control" th:field="*{comment}" minlength="30" maxlength="300" required id="comment"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="clearfix">
+                                <div class="text-center">
+                                    <input type="submit" value="Submit" class="btn btn-primary m-3"/>
+                                    <input type="button" value="Cancel" class="btn btn-danger" id="buttonCancel"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div th:replace="~{modal_fragments :: warning_modal}"></div>
+                </div>
+            </section>
+        </div>
+        <div th:replace="~{footer:: footer}"></div>
+    </div>
+</div>
+
+<script th:src="@{/js/feather-icons/feather.min.js}"></script>
+<script th:src="@{/vendors/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/common_form.js}"></script>
+<script type="text/javascript">
+    moduleUrl = "[[@{/reviews}]]";
+</script>
+</body>
+</html>

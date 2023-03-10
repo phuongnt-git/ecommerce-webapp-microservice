@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments :: page_head('Orders - Admin Homepage', 'none')}">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <div th:replace="~{sidebar :: sidebar}"></div>
+
+    <div id="main">
+        <div th:replace="~{header :: header}"></div>
+
+        <div class="main-content container-fluid">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Manage Orders</h2>
+
+                        <a th:href="@{/orders/export/csv}" class="fa-solid fa-file-csv fa-2x me-2 text-secondary" title="Export to CSV"></a>
+                        <a th:href="@{/orders/export/excel}" class="fa-solid fa-file-excel fa-2x me-2 text-success" title="Export to Excel"></a>
+                        <a th:href="@{/orders/export/pdf}" class="fa-solid fa-file-pdf fa-2x text-danger" title="Export to PDF"></a>
+                    </div>
+
+                    <div class="card-body">
+                        <div th:replace="~{fragments :: search_form_and_message}"></div>
+
+                        <div class="table-responsive">
+                            <table class="table table-borderless table-striped table-hover">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th th:replace="~{fragments :: column_link('id', 'ID', 'none')}"></th>
+                                    <th th:replace="~{fragments :: column_link('customer', 'Customer', 'none')}"></th>
+                                    <th th:replace="~{fragments :: column_link('total', 'Total', 'none')}"></th>
+                                    <th th:replace="~{fragments :: column_link('orderTime', 'Order Time', 'none')}"></th>
+                                    <th class="hideable-column" th:insert="~{fragments :: column_link('destination', 'Destination', 'tag')}"></th>
+                                    <th class="hideable-column" th:insert="~{fragments :: column_link('paymentMethod', 'Payment Method', 'tag')}"></th>
+                                    <th class="hideable-column" th:insert="~{fragments :: column_link('status', 'Status', 'tag')}"></th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="order : ${listOrders}">
+                                    <td>[[${order.id}]]</td>
+                                    <td>
+                                        <a class="linkCustomerDetail" style="text-decoration: none;"
+                                           th:href="@{'/customers/detail/' + ${order.customer.id}}">
+                                            [[${order.customer.fullName}]]
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div th:replace="~{fragments :: format_currency(${order.total})}"></div>
+                                    </td>
+                                    <td>
+                                        <div th:replace="~{fragments :: format_time(${order.orderTime})}"></div>
+                                    </td>
+                                    <td class="hideable-column">[[${order.destination}]]</td>
+                                    <td class="hideable-column">[[${order.paymentMethod}]]</td>
+                                    <td class="hideable-column">[[${order.status}]]</td>
+
+                                    <td>
+                                        <a class="fa-solid fa-file-alt fa-2x link-detail text-secondary" th:href="@{'/orders/detail/' + ${order.id}}" title="View details of this order"></a>
+                                        &nbsp;
+                                        <div th:replace="~{fragments :: edit('order', '/orders/edit/' + ${order.id})}"></div>
+                                        &nbsp;
+                                        <div th:replace="~{fragments :: delete('order', ${order.id}, '/orders/delete/' + ${order.id}, true)}"></div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div th:replace="~{fragments :: pagination('orders')}"></div>
+
+                        <div th:replace="~{modal_fragments :: delete_modal}"></div>
+                    </div>
+
+                    <div class="modal fade" id="customerDetailModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="detailModal">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <span th:replace="~{footer:: footer}"></span>
+</div>
+
+<script th:src="@{/js/common_list.js}"></script>
+<script th:src="@{/js/feather-icons/feather.min.js}"></script>
+<script th:src="@{/vendors/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script type="text/javascript">
+    moduleUrl = "[[@{/orders}]]";
+    entityName = "order";
+
+    $(document).ready(function () {
+        handleDefaultDetailLinkClick();
+        handleDetailLinkClick(".linkCustomerDetail", "#customerDetailModal");
+    });
+</script>
+</body>
+</html>

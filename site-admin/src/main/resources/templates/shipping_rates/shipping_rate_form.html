@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: page_head(${pageTitle}, 'none')}">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <div th:replace="~{sidebar :: sidebar}"></div>
+
+    <div id="main">
+        <div th:replace="~{header :: header}"></div>
+
+        <div class="main-content container-fluid">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">[[${pageTitle}]]</h2>
+                    </div>
+
+                    <form th:action="@{/shipping_rates/save}" method="post" th:object="${rate}">
+                        <input type="hidden" th:field="*{id}"/>
+
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="country" class="col-sm-4 col-form-label">Destination Country:</label>
+                                <div class="col-sm-8">
+                                    <select th:field="*{country}" class="form-control">
+                                        <option th:each="country : ${listCountries}" th:value="${country.id}" id="country">[[${country.name}]]</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="listStates" class="col-sm-4 col-form-label">Destination State/Province:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" th:field="*{state}" minlength="3" maxlength="64" list="listStates" required>
+                                    <datalist id="listStates"></datalist>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="rate" class="col-sm-4 col-form-label">Shipping Rate (per DIM weight):</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" th:field="*{rate}" required step="0.01" min="0" id="rate">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="days" class="col-sm-4 col-form-label">Days to deliver:</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" th:field="*{days}" required step="1" min="0" id="days">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="codSupported" class="col-sm-4 col-form-label">Cash On Delivery (COD):</label>
+                                <div class="col-sm-8">
+                                    <input type="checkbox" th:field="*{codSupported}" id="codSupported"/>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <input type="submit" value="Save" class="btn btn-primary m-3" />
+                                <input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+                            </div>
+                        </div>
+                    </form>
+                    <div th:replace="~{modal_fragments :: warning_modal}"></div>
+                </div>
+            </section>
+        </div>
+        <div th:replace="~{footer:: footer}"></div>
+    </div>
+</div>
+
+<script th:src="@{/js/common_form.js}"></script>
+<script th:src="@{/js/common_form_country_state.js}"></script>
+<script th:src="@{/js/feather-icons/feather.min.js}"></script>
+<script th:src="@{/vendors/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script type="text/javascript">
+    contextPath = "[[@{/}]]";
+    moduleUrl = "[[@{/shipping_rates}]]";
+</script>
+</body>
+</html>

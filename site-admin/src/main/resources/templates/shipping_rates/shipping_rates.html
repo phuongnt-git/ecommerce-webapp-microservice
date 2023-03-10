@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: page_head('Shipping Rates - Admin Homepage', 'none')}">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <div th:replace="~{sidebar :: sidebar}"></div>
+    <div id="main">
+        <div th:replace="~{header :: header}"></div>
+        <div class="main-content container-fluid">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Manage Shipping Rates</h2>
+
+                        <div th:replace="~{fragments :: create_new_and_export('shipping_rates')}"></div>
+                    </div>
+
+                    <div class="card-body">
+                        <div th:replace="~{fragments :: search_form_and_message}"></div>
+
+                        <div class="full-details">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-striped table-hover">
+                                    <thead class="table-dark">
+                                    <tr>
+                                        <th th:replace="~{fragments :: column_link('id', 'ID', 'none')}"></th>
+                                        <th th:replace="~{fragments :: column_link('country', 'Country', 'none')}"></th>
+                                        <th th:replace="~{fragments :: column_link('state', 'State', 'none')}"></th>
+                                        <th th:replace="~{fragments :: column_link('rate', 'Rate', 'none')}"></th>
+                                        <th th:replace="~{fragments :: column_link('days', 'Days', 'none')}"></th>
+                                        <th th:replace="~{fragments :: column_link('codSupported', 'COD Supported', 'none')}"></th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="rate : ${shippingRates}">
+                                        <td>[[${rate.id}]]</td>
+                                        <td>[[${rate.country.name}]]</td>
+                                        <td>[[${rate.state}]]</td>
+                                        <td>[[${rate.rate}]]</td>
+                                        <td>[[${rate.days}]]</td>
+                                        <td>
+                                            <div th:replace="~{shipping_rates/shipping_rate_fragment :: cod_support}"></div>
+                                        </td>
+                                        <td>
+                                            <div th:replace="~{fragments :: edit('shipping rate', '/shipping_rates/edit/' + ${rate.id})}"></div>
+                                            &nbsp;
+                                            <div th:replace="~{fragments :: delete('shipping rate', ${rate.id}, '/shipping_rates/delete/' + ${rate.id}, true)}"></div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="less-details">
+                            <div th:each="rate : ${shippingRates}" class="row m-1">
+                                <div class="col-4">
+                                    <span><b>[[${rate.country.name}]]</b></span>
+                                    <br/>
+                                    <span>[[${rate.state}]]</span>
+                                </div>
+                                <div class="col-8">
+                                    <div>
+                                        <div th:replace="~{shipping_rates/shipping_rate_fragment :: cod_support}" />
+                                        &nbsp;
+                                        <div th:replace="~{fragments :: edit('shipping rate', '/shipping_rates/edit/' + ${rate.id})}" />
+                                        &nbsp;
+                                        <div th:replace="~{fragments :: delete('shipping rate', ${rate.id}, '/shipping_rates/delete/' + ${rate.id}, true)}" />
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                            </div>
+                        </div>
+
+                        <div th:replace="~{fragments :: pagination('shipping rates')}"></div>
+
+                        <div th:replace="~{modal_fragments :: delete_modal}"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div th:replace="~{footer:: footer}"></div>
+    </div>
+</div>
+
+<script th:src="@{/js/common_list.js}"></script>
+<script th:src="@{/js/feather-icons/feather.min.js}"></script>
+<script th:src="@{/vendors/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script type="text/javascript">
+    moduleUrl = "[[@{/shipping_rates}]]";
+    entityName = "shipping rate";
+</script>
+</body>
+</html>

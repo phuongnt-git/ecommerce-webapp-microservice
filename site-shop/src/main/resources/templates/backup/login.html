@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment :: page_head('Sign In', 'none')}">
+    <title></title>
+</head>
+<body class="inner">
+<!-- preloader begin -->
+<div class="preloader">
+    <img alt="Gif" src="" th:src="@{/img/loader.gif}">
+</div>
+<!-- preloader end -->
+
+<!--------------------------------- HEADER SECTION START --------------------------------->
+<span th:replace="~{top_header2 :: top_header2}"></span>
+
+<!--------------------------------- REGISTER SECTION START --------------------------------->
+<div class="register py-120">
+    <div class="container">
+        <div class="row justify-content-around">
+            <div class="col-xl-5 col-md-6">
+                <div class="author-area">
+                    <h2>Log in your Account</h2>
+
+                    <p>There are no enrollment fees or shipping quotas. Simp vide your contact information, create a
+                        user ID and word.</p>
+
+                    <form class="login-form" method="post" th:action="@{/login}">
+                        <div th:if="${param.error}">
+                            <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+                        </div>
+
+                        <div th:if="${param.logout}">
+                            <p class="text-warning">You have been logged out.</p>
+                        </div>
+
+                        <input name="email" placeholder="Email Address" required type="email">
+                        <input name="password" placeholder="Enter Password" required type="password">
+
+                        <div class="form-check">
+                            <input class="form-check-input shipping-check" name="remember-me" id="remember-me"
+                                   type="checkbox">
+                            <span class="sub-input"><i class="fa-regular fa-check"></i></span>
+                            <label class="form-check-label" for="remember-me">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="def-btn btn-border">Login</button>
+                    </form>
+
+                    <span class="devider">or <a style="color: blue;"
+                                                th:href="@{/forgot_password}">Forgot Password</a></span>
+                    <div class="text-center">
+                        Don't have an account? <a th:href="@{/register}"><b>Sign up</b></a>
+                    </div>
+
+                    <div class="social-login-box">
+                        <a class="def-btn btn-fb" th:href="@{/oauth2/authorization/facebook}">Login with your
+                            facebook</a>
+                        <a class="def-btn btn-gl" th:href="@{/oauth2/authorization/google}">&nbsp;Login with your
+                            google+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- REGISTER SECTION END --------------------------------->
+
+<!--------------------------------- FEATURES SECTION START --------------------------------->
+<span th:replace="~{section/feature_section :: content}">Feature Section</span>
+<!--------------------------------- FEATURES SECTION END --------------------------------->
+
+<!--------------------------------- FOOTER SECTION START --------------------------------->
+<span th:replace="~{footer :: footer}"></span>
+<!--------------------------------- FOOTER SECTION END --------------------------------->
+
+<script th:src="@{/vendor/js/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/vendor/js/jquery.nice-select.min.js}"></script>
+<script th:src="@{/vendor/js/jquery.flagstrap.min.js}"></script>
+<script th:src="@{/vendor/js/slick.min.js}"></script>
+<script th:src="@{/vendor/js/owl.carousel.min.js}"></script>
+<script th:src="@{/vendor/js/jquery.syotimer.min.js}"></script>
+<script th:src="@{/vendor/js/jquery-modal-video.min.js}"></script>
+<script th:src="@{/vendor/js/nouislider.min.js}"></script>
+<script th:src="@{/vendor/js/jquery-ui.min.js}"></script>
+<script th:src="@{/vendor/js/MonthPicker.min.js}"></script>
+<script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

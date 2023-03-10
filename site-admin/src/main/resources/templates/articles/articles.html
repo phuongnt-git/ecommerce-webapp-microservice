@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: page_head('Articles - Admin Homepage', 'none')}">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <div th:replace="~{sidebar :: sidebar}"></div>
+    <div id="main">
+
+        <div th:replace="~{header :: header}"></div>
+        <div class="main-content container-fluid">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Manage Articles</h2>
+
+                        <div th:replace="~{fragments :: create_new_and_export('articles')}"></div>
+                    </div>
+
+                    <div class="card-body">
+                        <div th:replace="~{fragments :: search_form_and_message}"></div>
+
+                        <div class="full-details">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-striped table-hover">
+                                    <thead class="table-dark">
+                                    <tr>
+                                        <th th:replace="~{fragments :: column_link('id', 'ID', 'none')}"></th>
+                                        <th th:replace="~{fragments :: column_link('title', 'Title', 'none')}"></th>
+                                        <th class="hideable-column" th:insert="~{fragments :: column_link('type', 'Type', 'tag')}"></th>
+                                        <th th:replace="~{fragments :: column_link('user', 'Created by', 'none')}"></th>
+                                        <th class="hideable-column" th:insert="~{fragments :: column_link('updatedTime', 'Updated Time', 'tag')}"></th>
+                                        <th th:replace="~{fragments :: column_link('published', 'Published', 'none')}"></th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="article : ${listArticles}">
+                                        <td>[[${article.id}]]</td>
+                                        <td>[[${article.title}]]</td>
+                                        <td class="hideable-column">[[${article.type}]]</td>
+                                        <td>[[${article.user.fullName}]]</td>
+                                        <td class="hideable-column">
+                                            <div th:replace="~{fragments :: format_time(${article.updatedTime})}"></div>
+                                        </td>
+                                        <td>
+                                            <div th:replace="~{fragments :: status(${article.published}, 'article', '/articles/' + ${article.id})}"></div>
+                                        </td>
+                                        <td>
+                                            <a class="fas fa-file-alt fa-2x text-secondary link-detail"
+                                               th:href="@{'/articles/detail/' + ${article.id}}"
+                                               title="View details of this article"></a>
+                                            &nbsp;&nbsp;
+                                            <div th:replace="~{fragments :: edit('article', '/articles/edit/' + ${article.id})}"></div>
+                                            &nbsp;
+                                            <div th:replace="~{fragments :: delete('article', ${article.id}, '/articles/delete/' + ${article.id}, true)}"></div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="less-details">
+                            <div th:each="article : ${listArticles}" class="row m-1">
+                                <div class="col-2">[[${article.id}]]</div>
+                                <div class="col-10">
+                                    <div>[[${article.title}]]</div>
+                                    <div class="mt-2">
+                                        <a class="fa-solid fa-file-alt fa-2x text-secondary link-detail"
+                                           th:href="@{'/articles/detail/' + ${article.id}}"></a>
+                                        &nbsp;
+                                        <div th:replace="~{fragments :: status(${article.published}, 'article', '/articles/' + ${article.id})}"></div>
+                                        &nbsp;
+                                        <div th:replace="~{fragments :: edit('article', '/articles/edit/' + ${article.id})}"></div>
+                                        &nbsp;
+                                        <div th:replace="~{fragments :: delete('article', ${article.id}, '/articles/delete/' + ${article.id}, true)}"></div>
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                            </div>
+                        </div>
+
+                        <div th:replace="~{fragments :: pagination('articles')}"></div>
+
+                        <div th:replace="~{modal_fragments :: delete_modal}"></div>
+
+                        <div class="modal fade" id="detailModal">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div th:replace="~{footer:: footer}"></div>
+    </div>
+</div>
+
+<script th:src="@{/js/feather-icons/feather.min.js}"></script>
+<script th:src="@{/vendors/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript">
+    moduleUrl = "[[@{/articles}]]";
+    entityName = "article";
+
+    $(document).ready(function () {
+        handleDefaultDetailLinkClick();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+netstat -ano | findstr <PORT>
+taskkill /F /pid <LISTENING>
+
+mvn jasypt:encrypt-value "-Djasypt.encryptor.password=<KEY>" "-Djasypt.plugin.value=<VALUE>"
