@@ -3,7 +3,7 @@ package com.ecommerce.site.admin.service;
 import com.ecommerce.site.admin.exception.CategoryNotFoundException;
 import com.ecommerce.site.admin.model.entity.Category;
 import com.ecommerce.site.admin.repository.CategoryRepository;
-import com.ecommerce.site.admin.utils.PagingAndSortingUtils;
+import com.ecommerce.site.admin.util.PagingAndSortingUtil;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,7 +27,7 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public List<Category> listByPage(PagingAndSortingUtils info, int pageNumber, String sortDir, String keyword) {
+    public List<Category> listByPage(PagingAndSortingUtil info, int pageNumber, String sortDir, String keyword) {
         Sort sort = Sort.by("name");
 
         if ("asc".equals(sortDir)) {

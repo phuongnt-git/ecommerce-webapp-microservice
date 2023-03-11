@@ -127,11 +127,11 @@ public class User implements Serializable {
     }
 
     @Transient
-    public String getPhotosPath() {
+    public String getPhotosImagePath() {
         if (id == null || photos == null) {
             return "/images/default-user.png";
         }
-        return "/images/user-photos/" + this.id + "/" + this.photos;
+        return "/user-photos/" + this.id + "/" + this.photos;
     }
 
 }

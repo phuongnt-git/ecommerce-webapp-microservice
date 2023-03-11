@@ -50,7 +50,7 @@ public class ProductImage implements Serializable {
 
     @Transient
     public String getImagePath() {
-        return "/images/product-images/" + product.getId() + "/extras/" + this.name;
+        return "/product-images/" + product.getId() + "/extras/" + this.name;
     }
 
     @Override

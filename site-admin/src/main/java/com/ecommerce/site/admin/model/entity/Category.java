@@ -130,7 +130,7 @@ public class Category implements Serializable {
         if (this.id == null) {
             return "/images/image-thumbnail.png";
         }
-        return "/images/category-images/" + this.id + "/" + this.image;
+        return "/category-images/" + this.id + "/" + this.image;
     }
 
     public boolean isHasChildren() {

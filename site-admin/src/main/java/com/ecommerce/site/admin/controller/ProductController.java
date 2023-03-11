@@ -11,7 +11,7 @@ import com.ecommerce.site.admin.security.UserDetailsImpl;
 import com.ecommerce.site.admin.service.BrandService;
 import com.ecommerce.site.admin.service.CategoryService;
 import com.ecommerce.site.admin.service.ProductService;
-import com.ecommerce.site.admin.utils.FileUploadUtils;
+import com.ecommerce.site.admin.util.FileUploadUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -139,8 +139,8 @@ public class ProductController {
             String productExtraImagesDir = PRODUCT_IMAGES_DIR + "/" + id + "/extras";
             String productImagesDir = PRODUCT_IMAGES_DIR + "/" + id;
 
-            FileUploadUtils.removeDir(productExtraImagesDir);
-            FileUploadUtils.removeDir(productImagesDir);
+            FileUploadUtil.removeDir(productExtraImagesDir);
+            FileUploadUtil.removeDir(productImagesDir);
 
             attributes.addFlashAttribute("message", String.format("The product ID %s has been deleted successfully", id));
         } catch (ProductNotFoundException e) {

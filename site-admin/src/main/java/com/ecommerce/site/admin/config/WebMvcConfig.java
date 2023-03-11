@@ -19,7 +19,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(@NotNull ResourceHandlerRegistry registry) {
-        exposeDirectory("../images", registry);
+        exposeDirectory("../user-photos", registry);
+        exposeDirectory("../category-images", registry);
+        exposeDirectory("../brand-logos", registry);
+        exposeDirectory("../product-images", registry);
+        exposeDirectory("../site-photo", registry);
     }
 
     @Override
@@ -32,6 +36,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         String absolutePath = path.toFile().getAbsolutePath();
         String logicalPath = pathPattern.replace("../", "") + "/**";
 
-        registry.addResourceHandler(logicalPath).addResourceLocations("file:" + absolutePath + "/");
+        registry.addResourceHandler(logicalPath).addResourceLocations("file:/" + absolutePath + "/");
     }
 }

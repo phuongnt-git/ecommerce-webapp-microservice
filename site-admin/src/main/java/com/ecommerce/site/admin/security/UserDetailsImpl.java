@@ -21,11 +21,9 @@ public record UserDetailsImpl(User user) implements UserDetails {
     public @NotNull Collection<? extends GrantedAuthority> getAuthorities() {
         Set<Role> roles = user.getRoles();
         List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();
-
         for (Role role : roles) {
             simpleGrantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         }
-
         return simpleGrantedAuthorities;
     }
 
@@ -78,5 +76,4 @@ public record UserDetailsImpl(User user) implements UserDetails {
     public User getUser() {
         return user;
     }
-
 }

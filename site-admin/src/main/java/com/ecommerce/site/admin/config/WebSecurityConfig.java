@@ -62,7 +62,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(@NotNull HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .requestMatchers("/css/**", "/img/**", "/js/**", "/webjars/**", "/vendors/**").permitAll()
+                .requestMatchers("/css/**", "/images/**", "/js/**", "/webjars/**", "/vendors/**").permitAll()
                 .requestMatchers("/users/**", "/settings/**", "/countries/**", "/states/**").hasAuthority("Admin")
                 .requestMatchers("/categories/**", "/brands/**", "/articles/**", "/sections/**").hasAnyAuthority("Admin", "Editor")
                 .requestMatchers("/products/new", "/products/delete/**").hasAnyAuthority("Admin", "Editor")

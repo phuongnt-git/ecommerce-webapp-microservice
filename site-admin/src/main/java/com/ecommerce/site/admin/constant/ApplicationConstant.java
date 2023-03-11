@@ -29,13 +29,13 @@ public class ApplicationConstant {
 
     public static final int QUESTIONS_PER_PAGE = 10;
 
-    public static final String USER_PHOTOS_DIR = "../images/user-photos";
+    public static final String USER_PHOTOS_DIR = "../user-photos";
 
-    public static final String CATEGORY_IMAGES_DIR = "../images/category-images";
+    public static final String CATEGORY_IMAGES_DIR = "../category-images";
 
-    public static final String BRAND_LOGOS_DIR = "../images/brand-logos";
+    public static final String BRAND_LOGOS_DIR = "../brand-logos";
 
-    public static final String PRODUCT_IMAGES_DIR = "../images/product-images";
+    public static final String PRODUCT_IMAGES_DIR = "../product-images";
 
-    public static final String SITE_LOGO_DIR = "../images/site-logo";
+    public static final String SITE_LOGO_DIR = "../site-logo";
 }

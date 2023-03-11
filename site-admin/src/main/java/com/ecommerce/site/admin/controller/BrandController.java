@@ -7,7 +7,7 @@ import com.ecommerce.site.admin.helper.PagingAndSortingHelper;
 import com.ecommerce.site.admin.annotation.PagingAndSortingParam;
 import com.ecommerce.site.admin.service.BrandService;
 import com.ecommerce.site.admin.service.CategoryService;
-import com.ecommerce.site.admin.utils.FileUploadUtils;
+import com.ecommerce.site.admin.util.FileUploadUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,8 +78,8 @@ public class BrandController {
 
             String uploadDir = BRAND_LOGOS_DIR + "/" + savedBrand.getId();
 
-            FileUploadUtils.cleanDir(uploadDir);
-            FileUploadUtils.saveFile(uploadDir, fileName, multipartFile);
+            FileUploadUtil.cleanDir(uploadDir);
+            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         } else {
             brandService.save(brand);
         }
@@ -115,7 +115,7 @@ public class BrandController {
         try {
             brandService.delete(id);
             String brandDir = BRAND_LOGOS_DIR + "/" + id;
-            FileUploadUtils.removeDir(brandDir);
+            FileUploadUtil.removeDir(brandDir);
 
             attributes.addFlashAttribute("message", String.format("The brand ID %s has been deleted successfully", id));
         } catch (BrandNotFoundException e) {

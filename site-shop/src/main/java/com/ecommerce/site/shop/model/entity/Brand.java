@@ -74,7 +74,7 @@ public class Brand implements Serializable {
         if (this.id == null) {
             return "/images/image-thumbnail.png";
         }
-        return "/images/brand-logos/" + this.id + "/" + this.logo;
+        return "/brand-logos/" + this.id + "/" + this.logo;
     }
 
 }

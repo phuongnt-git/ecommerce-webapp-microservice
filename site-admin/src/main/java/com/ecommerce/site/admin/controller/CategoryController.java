@@ -4,8 +4,8 @@ import com.ecommerce.site.admin.exception.CategoryNotFoundException;
 import com.ecommerce.site.admin.model.entity.Category;
 import com.ecommerce.site.admin.export.CategoryCsvExporter;
 import com.ecommerce.site.admin.service.CategoryService;
-import com.ecommerce.site.admin.utils.FileUploadUtils;
-import com.ecommerce.site.admin.utils.PagingAndSortingUtils;
+import com.ecommerce.site.admin.util.FileUploadUtil;
+import com.ecommerce.site.admin.util.PagingAndSortingUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.jetbrains.annotations.NotNull;
@@ -50,7 +50,7 @@ public class CategoryController {
             sortDir = "asc";
         }
 
-        PagingAndSortingUtils info = new PagingAndSortingUtils();
+        PagingAndSortingUtil info = new PagingAndSortingUtil();
         List<Category> listCategories = service.listByPage(info, pageNumber, sortDir, keyword);
 
         long startPage = (long) (pageNumber - 1) * ROOT_CATEGORIES_PER_PAGE + 1;
@@ -100,8 +100,8 @@ public class CategoryController {
             Category savedCategory = service.save(category);
             String uploadDir = CATEGORY_IMAGES_DIR + "/" + savedCategory.getId();
 
-            FileUploadUtils.cleanDir(uploadDir);
-            FileUploadUtils.saveFile(uploadDir, fileName, multipartFile);
+            FileUploadUtil.cleanDir(uploadDir);
+            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         } else {
             service.save(category);
         }
@@ -148,7 +148,7 @@ public class CategoryController {
                                  @NotNull HttpServletRequest request) {
         try {
             service.delete(id);
-            FileUploadUtils.removeDir(CATEGORY_IMAGES_DIR + "/" + id);
+            FileUploadUtil.removeDir(CATEGORY_IMAGES_DIR + "/" + id);
 
             attributes.addFlashAttribute("message", String.format("The category ID %s has been deleted successfully", id));
         } catch (CategoryNotFoundException e) {

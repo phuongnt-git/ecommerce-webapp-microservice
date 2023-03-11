@@ -14,7 +14,7 @@
     <link rel="stylesheet" th:href="@{/vendors/simple-datatables/style.css}">
     <link rel="stylesheet" th:href="@{/vendors/perfect-scrollbar/perfect-scrollbar.css}">
 
-    <link rel="shortcut icon" th:href="@{/img/favicon.png}" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{images}" type="image/x-icon">
 
     <script th:src="@{/webjars/jquery/jquery.min.js}" type="text/javascript"></script>
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" type="text/javascript"></script>
@@ -56,16 +56,16 @@
 <div th:fragment="user_photos" th:remove="tag">
     <span class="fa-solid fa-portrait fa-3x text-muted" th:if="${user.photos == null}"></span>
     <img alt="Photos preview" src="" style="width: 100px"
-         th:if="${user.photos != null}" th:src="@{${user.photosPath}}"/>
+         th:if="${user.photos != null}" th:src="@{${user.photosImagePath}}"/>
 </div>
 
 <div th:fragment="status(enabled, entityName, entityUrl)" th:remove="tag">
-    <a class="fa-solid fa-check-circle fa-2x text-success" style="text-decoration: none;" th:href="@{${entityUrl} + '/enabled/false'}"
+    <a class="fa-solid fa-check-circle fa-2x text-green" style="text-decoration: none;" th:href="@{${entityUrl} + '/enabled/false'}"
        th:if="${enabled == true}"
        th:title="'Disable this ' + ${entityName}"
     ></a>
 
-    <a class="fa-regular fa-circle fa-2x text-secondary" style="text-decoration: none;" th:href="@{${entityUrl} + '/enabled/true'}"
+    <a class="fa-regular fa-circle fa-2x text-dark" style="text-decoration: none;" th:href="@{${entityUrl} + '/enabled/true'}"
        th:if="${enabled == false}"
        th:title="'Enable this ' + ${entityName}"
     ></a>

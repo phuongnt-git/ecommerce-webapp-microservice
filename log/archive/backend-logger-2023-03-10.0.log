@@ -1,0 +1,516 @@
+2023-03-10 20:06:35,157 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 8104 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 20:06:35,159 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 20:06:35,161 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 20:06:47,545 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter             - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-03-10 20:07:18,386 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 18272 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 20:07:18,389 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 20:07:18,390 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 20:07:30,185 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 12.103 seconds (process running for 12.846)
+2023-03-10 20:10:41,877 [http-nio-8080-exec-6] ERROR o.h.engine.jdbc.spi.SqlExceptionHelper             - Table 'bbzbutzzoca4jqx3.users' doesn't exist
+2023-03-10 20:10:41,886 [http-nio-8080-exec-6] ERROR o.s.s.w.a.UsernamePasswordAuthenticationFilter     - An internal error occurred while trying to authenticate the user.
+org.springframework.security.authentication.InternalAuthenticationServiceException: JDBC exception executing SQL [select u1_0.id,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.failed_attempt,u1_0.first_name,u1_0.last_modified,u1_0.last_name,u1_0.password,u1_0.photos from users u1_0 where u1_0.email=?]; SQL [n/a]
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at org.springframework.security.authentication.ObservationAuthenticationManager.lambda$authenticate$1(ObservationAuthenticationManager.java:53)
+	at io.micrometer.observation.Observation.observe(Observation.java:559)
+	at org.springframework.security.authentication.ObservationAuthenticationManager.authenticate(ObservationAuthenticationManager.java:52)
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:231)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:130)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilterInternal(SecurityContextHolderFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:278)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:170)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:351)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [select u1_0.id,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.failed_attempt,u1_0.first_name,u1_0.last_modified,u1_0.last_name,u1_0.password,u1_0.photos from users u1_0 where u1_0.email=?]; SQL [n/a]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:257)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:134)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:218)
+	at jdk.proxy3/jdk.proxy3.$Proxy189.findByEmail(Unknown Source)
+	at com.ecommerce.site.admin.security.UserDetailsServiceImpl.loadUserByUsername(UserDetailsServiceImpl.java:22)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:93)
+	... 81 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [select u1_0.id,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.failed_attempt,u1_0.first_name,u1_0.last_modified,u1_0.last_name,u1_0.password,u1_0.photos from users u1_0 where u1_0.email=?]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:95)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:253)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:146)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.lambda$processNext$0(JdbcValuesResultSetImpl.java:89)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advance(JdbcValuesResultSetImpl.java:274)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:85)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:29)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:89)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:142)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:32)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:443)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:166)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:91)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:102)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:305)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:246)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:546)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:363)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.list(QuerySqmImpl.java:1032)
+	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:457)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.getSingleResult(QuerySqmImpl.java:1062)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$DeferredQueryInvocationHandler.invoke(SharedEntityManagerCreator.java:401)
+	at jdk.proxy3/jdk.proxy3.$Proxy226.getSingleResult(Unknown Source)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:193)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:90)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:148)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	... 90 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Table 'bbzbutzzoca4jqx3.users' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:217)
+	... 132 common frames omitted
+2023-03-10 20:10:42,466 [http-nio-8080-exec-6] ERROR o.h.engine.jdbc.spi.SqlExceptionHelper             - Table 'bbzbutzzoca4jqx3.users' doesn't exist
+2023-03-10 20:10:43,457 [http-nio-8080-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                - Servlet.service() for servlet [dispatcherServlet] in context with path [/ecommerce/admin] threw exception
+org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [select u1_0.id,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.failed_attempt,u1_0.first_name,u1_0.last_modified,u1_0.last_name,u1_0.password,u1_0.photos from users u1_0 where u1_0.email=?]; SQL [n/a]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:257)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:134)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:218)
+	at jdk.proxy3/jdk.proxy3.$Proxy189.findByEmail(Unknown Source)
+	at com.ecommerce.site.admin.service.UserService.findByEmail(UserService.java:146)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.ecommerce.site.admin.service.UserService$$SpringCGLIB$$0.findByEmail(<generated>)
+	at com.ecommerce.site.admin.security.CustomLoginFailureHandler.onAuthenticationFailure(CustomLoginFailureHandler.java:34)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.unsuccessfulAuthentication(AbstractAuthenticationProcessingFilter.java:354)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:245)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:130)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilterInternal(SecurityContextHolderFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:185)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:278)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:170)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:351)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [select u1_0.id,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.failed_attempt,u1_0.first_name,u1_0.last_modified,u1_0.last_name,u1_0.password,u1_0.photos from users u1_0 where u1_0.email=?]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:95)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:253)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:146)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.lambda$processNext$0(JdbcValuesResultSetImpl.java:89)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advance(JdbcValuesResultSetImpl.java:274)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:85)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:29)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:89)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:142)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:32)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:443)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:166)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:91)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:102)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:305)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:246)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:546)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:363)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.list(QuerySqmImpl.java:1032)
+	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:457)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.getSingleResult(QuerySqmImpl.java:1062)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:193)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:90)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:148)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	... 100 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Table 'bbzbutzzoca4jqx3.users' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:217)
+	... 136 common frames omitted
+2023-03-10 20:11:26,621 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 5740 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 20:11:26,623 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 20:11:26,624 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 20:12:29,086 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 62.764 seconds (process running for 63.481)
+2023-03-10 20:18:00,258 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 16768 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 20:18:00,261 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 20:18:00,262 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 20:18:40,846 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 40.911 seconds (process running for 41.688)
+2023-03-10 20:36:56,902 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 5532 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 20:36:56,904 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 20:36:56,905 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 20:38:03,148 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 66.543 seconds (process running for 67.314)
+2023-03-10 20:43:50,640 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 10248 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 20:43:50,643 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 20:43:50,644 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 20:45:00,030 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 69.688 seconds (process running for 70.48)
+2023-03-10 23:26:00,977 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 22188 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 23:26:00,979 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 23:26:00,980 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 23:26:38,451 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 37.814 seconds (process running for 38.664)
+2023-03-10 23:49:00,698 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 22132 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 23:49:00,700 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 23:49:00,701 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 23:49:10,463 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 10.054 seconds (process running for 10.774)
+2023-03-10 23:49:45,850 [http-nio-8080-exec-6] TRACE c.e.s.a.s.CustomLoginSuccessHandler                - Using default url /
+2023-03-10 23:51:32,690 [main] INFO  o.s.b.d.r.RestartApplicationListener               - Restart disabled due to an agent-based reloader being active
+2023-03-10 23:53:57,055 [main] INFO  o.s.b.d.r.RestartApplicationListener               - Restart disabled due to an agent-based reloader being active
+2023-03-10 23:53:57,547 [main] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 19508 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 23:53:57,548 [main] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 23:53:57,549 [main] INFO  c.e.site.admin.SiteAdminApplication                - The following 1 profile is active: "prod"
+2023-03-10 23:54:09,704 [main] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 12.669 seconds (process running for 14.593)
+2023-03-10 23:55:50,159 [http-nio-8080-exec-5] TRACE c.e.s.a.s.CustomLoginSuccessHandler                - Using default url /
+2023-03-10 23:57:45,018 [http-nio-8080-exec-7] TRACE c.e.s.a.s.CustomLoginSuccessHandler                - Using default url /
+2023-03-10 23:57:57,527 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 17708 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 23:57:57,530 [restartedMain] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 23:57:57,531 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - No active profile set, falling back to 1 default profile: "default"
+2023-03-10 23:57:57,571 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls           - The Class-Path manifest attribute in C:\Users\mrche\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.7.0.0\ojdbc8-21.7.0.0.jar referenced one or more files that do not exist: file:/C:/Users/mrche/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.7.0.0/oraclepki.jar
+2023-03-10 23:57:57,571 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-10 23:57:57,572 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-10 23:57:58,365 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-10 23:57:58,452 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 81 ms. Found 15 JPA repository interfaces.
+2023-03-10 23:57:58,606 [restartedMain] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer    - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ulisesbocchio.jasyptspringboot.configuration.EnableEncryptablePropertiesConfiguration
+2023-03-10 23:57:58,615 [restartedMain] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer    - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ulisesbocchio.jasyptspringboot.configuration.EncryptablePropertyResolverConfiguration
+2023-03-10 23:57:58,667 [restartedMain] INFO  c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor - Post-processing PropertySource instances
+2023-03-10 23:57:58,668 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+2023-03-10 23:57:58,669 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-03-10 23:57:58,669 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource servletContextInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-03-10 23:57:58,669 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-10 23:57:58,670 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2023-03-10 23:57:58,670 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2023-03-10 23:57:58,670 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-10 23:57:58,670 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-10 23:57:58,923 [restartedMain] INFO  c.u.j.filter.DefaultLazyPropertyFilter             - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2023-03-10 23:57:58,929 [restartedMain] INFO  c.u.j.r.DefaultLazyPropertyResolver                - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2023-03-10 23:57:58,931 [restartedMain] INFO  c.u.j.d.DefaultLazyPropertyDetector                - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2023-03-10 23:57:59,113 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http)
+2023-03-10 23:57:59,119 [restartedMain] INFO  o.apache.catalina.core.StandardService             - Starting service [Tomcat]
+2023-03-10 23:57:59,120 [restartedMain] INFO  org.apache.catalina.core.StandardEngine            - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-03-10 23:57:59,171 [restartedMain] INFO  o.a.c.c.C.[.[.[/ecommerce/admin]                   - Initializing Spring embedded WebApplicationContext
+2023-03-10 23:57:59,172 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 1600 ms
+2023-03-10 23:57:59,486 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper            - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-10 23:57:59,526 [restartedMain] INFO  org.hibernate.Version                              - HHH000412: Hibernate ORM core version 6.1.5.Final
+2023-03-10 23:57:59,743 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Starting...
+2023-03-10 23:58:00,064 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool                  - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@2a0f4183
+2023-03-10 23:58:00,065 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Start completed.
+2023-03-10 23:58:00,085 [restartedMain] INFO  SQL dialect                                        - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2023-03-10 23:58:01,130 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-10 23:58:01,137 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-10 23:58:02,468 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping              - Adding welcome page template: index
+2023-03-10 23:58:03,110 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain               - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5dbbdf73, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c672f79, org.springframework.security.web.context.SecurityContextHolderFilter@168ef388, org.springframework.security.web.header.HeaderWriterFilter@d4612b8, org.springframework.security.web.csrf.CsrfFilter@6ac02631, org.springframework.security.web.authentication.logout.LogoutFilter@24a3a73b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@571cce2b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@698c1e27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63e5de5d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@41f60d36, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e381c5, org.springframework.security.web.access.ExceptionTranslationFilter@141ccde0, org.springframework.security.web.access.intercept.AuthorizationFilter@6c0e0bf0]
+2023-03-10 23:58:03,130 [restartedMain] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer    - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ulisesbocchio.jasyptspringboot.configuration.CachingConfiguration
+2023-03-10 23:58:03,596 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729
+2023-03-10 23:58:03,675 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '/ecommerce/admin'
+2023-03-10 23:58:03,676 [restartedMain] INFO  c.u.j.c.RefreshScopeRefreshedEventListener         - Refreshing cached encryptable property sources on ServletWebServerInitializedEvent
+2023-03-10 23:58:03,677 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source systemProperties refreshed
+2023-03-10 23:58:03,677 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source systemEnvironment refreshed
+2023-03-10 23:58:03,677 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source random refreshed
+2023-03-10 23:58:03,677 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' refreshed
+2023-03-10 23:58:03,677 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source devtools refreshed
+2023-03-10 23:58:03,677 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+2023-03-10 23:58:03,677 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-03-10 23:58:03,678 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource servletContextInitParams [org.springframework.web.context.support.ServletContextPropertySource] to EncryptableEnumerablePropertySourceWrapper
+2023-03-10 23:58:03,730 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat initialized with port(s): 8090 (http)
+2023-03-10 23:58:03,731 [restartedMain] INFO  o.apache.catalina.core.StandardService             - Starting service [Tomcat]
+2023-03-10 23:58:03,731 [restartedMain] INFO  org.apache.catalina.core.StandardEngine            - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-03-10 23:58:03,746 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/]               - Initializing Spring embedded WebApplicationContext
+2023-03-10 23:58:03,746 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 66 ms
+2023-03-10 23:58:03,755 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver                - Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-03-10 23:58:04,003 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat started on port(s): 8090 (http) with context path ''
+2023-03-10 23:58:04,003 [restartedMain] INFO  c.u.j.c.RefreshScopeRefreshedEventListener         - Refreshing cached encryptable property sources on ServletWebServerInitializedEvent
+2023-03-10 23:58:04,003 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source servletContextInitParams refreshed
+2023-03-10 23:58:04,003 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source systemProperties refreshed
+2023-03-10 23:58:04,003 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source systemEnvironment refreshed
+2023-03-10 23:58:04,003 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source random refreshed
+2023-03-10 23:58:04,003 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' refreshed
+2023-03-10 23:58:04,003 [restartedMain] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source devtools refreshed
+2023-03-10 23:58:04,003 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource server.ports [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-10 23:58:04,004 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+2023-03-10 23:58:04,004 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-03-10 23:58:04,015 [restartedMain] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 6.782 seconds (process running for 7.565)
+2023-03-10 23:58:04,358 [RMI TCP Connection(3)-192.168.1.1] INFO  o.a.c.c.C.[.[.[/ecommerce/admin]                   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-10 23:58:04,358 [RMI TCP Connection(3)-192.168.1.1] INFO  o.s.web.servlet.DispatcherServlet                  - Initializing Servlet 'dispatcherServlet'
+2023-03-10 23:58:04,359 [RMI TCP Connection(3)-192.168.1.1] INFO  o.s.web.servlet.DispatcherServlet                  - Completed initialization in 1 ms
+2023-03-10 23:59:13,788 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-10 23:59:13,791 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Shutdown initiated...
+2023-03-10 23:59:13,797 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Shutdown completed.
+2023-03-10 23:59:19,161 [main] INFO  o.s.b.d.r.RestartApplicationListener               - Restart disabled due to an agent-based reloader being active
+2023-03-10 23:59:19,623 [main] INFO  c.e.site.admin.SiteAdminApplication                - Starting SiteAdminApplication using Java 17.0.5 with PID 3680 (C:\Users\mrche\Downloads\Compressed\ecommerce-webapp\site-admin\target\classes started by Nguyen Thanh Phuong in C:\Users\mrche\Downloads\Compressed\ecommerce-webapp)
+2023-03-10 23:59:19,624 [main] DEBUG c.e.site.admin.SiteAdminApplication                - Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-03-10 23:59:19,624 [main] INFO  c.e.site.admin.SiteAdminApplication                - No active profile set, falling back to 1 default profile: "default"
+2023-03-10 23:59:19,689 [main] INFO  o.s.boot.devtools.restart.ChangeableUrls           - The Class-Path manifest attribute in C:\Users\mrche\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.7.0.0\ojdbc8-21.7.0.0.jar referenced one or more files that do not exist: file:/C:/Users/mrche/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.7.0.0/oraclepki.jar
+2023-03-10 23:59:19,689 [main] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-10 23:59:19,689 [main] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-10 23:59:20,707 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-10 23:59:20,862 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 146 ms. Found 15 JPA repository interfaces.
+2023-03-10 23:59:21,101 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer    - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ulisesbocchio.jasyptspringboot.configuration.EnableEncryptablePropertiesConfiguration
+2023-03-10 23:59:21,114 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer    - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ulisesbocchio.jasyptspringboot.configuration.EncryptablePropertyResolverConfiguration
+2023-03-10 23:59:21,183 [main] INFO  c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor - Post-processing PropertySource instances
+2023-03-10 23:59:21,184 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+2023-03-10 23:59:21,185 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-03-10 23:59:21,185 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource servletContextInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-03-10 23:59:21,186 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-10 23:59:21,187 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2023-03-10 23:59:21,187 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2023-03-10 23:59:21,187 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-10 23:59:21,187 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-10 23:59:21,635 [main] INFO  c.u.j.filter.DefaultLazyPropertyFilter             - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2023-03-10 23:59:21,644 [main] INFO  c.u.j.r.DefaultLazyPropertyResolver                - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2023-03-10 23:59:21,646 [main] INFO  c.u.j.d.DefaultLazyPropertyDetector                - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2023-03-10 23:59:21,846 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http)
+2023-03-10 23:59:21,858 [main] INFO  o.apache.catalina.core.StandardService             - Starting service [Tomcat]
+2023-03-10 23:59:21,858 [main] INFO  org.apache.catalina.core.StandardEngine            - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-03-10 23:59:21,940 [main] INFO  o.a.c.c.C.[.[.[/ecommerce/admin]                   - Initializing Spring embedded WebApplicationContext
+2023-03-10 23:59:21,941 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 2251 ms
+2023-03-10 23:59:22,342 [main] INFO  o.hibernate.jpa.internal.util.LogHelper            - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-10 23:59:22,389 [main] INFO  org.hibernate.Version                              - HHH000412: Hibernate ORM core version 6.1.5.Final
+2023-03-10 23:59:22,701 [main] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Starting...
+2023-03-10 23:59:22,968 [main] INFO  com.zaxxer.hikari.pool.HikariPool                  - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@390e814c
+2023-03-10 23:59:22,970 [main] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Start completed.
+2023-03-10 23:59:22,993 [main] INFO  SQL dialect                                        - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2023-03-10 23:59:24,499 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-10 23:59:24,513 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-10 23:59:26,272 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping              - Adding welcome page template: index
+2023-03-10 23:59:27,019 [main] INFO  o.s.s.web.DefaultSecurityFilterChain               - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8b55c50, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f55fd0e, org.springframework.security.web.context.SecurityContextHolderFilter@9177860, org.springframework.security.web.header.HeaderWriterFilter@456629a8, org.springframework.security.web.csrf.CsrfFilter@53716c51, org.springframework.security.web.authentication.logout.LogoutFilter@b0d8d4a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@472e1f2f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@782f56af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@210b558d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7f0c6305, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54bd2345, org.springframework.security.web.access.ExceptionTranslationFilter@5b11d019, org.springframework.security.web.access.intercept.AuthorizationFilter@36382eca]
+2023-03-10 23:59:27,033 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer    - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ulisesbocchio.jasyptspringboot.configuration.CachingConfiguration
+2023-03-10 23:59:27,599 [main] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729
+2023-03-10 23:59:27,679 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '/ecommerce/admin'
+2023-03-10 23:59:27,682 [main] INFO  c.u.j.c.RefreshScopeRefreshedEventListener         - Refreshing cached encryptable property sources on ServletWebServerInitializedEvent
+2023-03-10 23:59:27,682 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source systemProperties refreshed
+2023-03-10 23:59:27,683 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source systemEnvironment refreshed
+2023-03-10 23:59:27,683 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source random refreshed
+2023-03-10 23:59:27,683 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' refreshed
+2023-03-10 23:59:27,683 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source devtools refreshed
+2023-03-10 23:59:27,683 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+2023-03-10 23:59:27,683 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-03-10 23:59:27,683 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource servletContextInitParams [org.springframework.web.context.support.ServletContextPropertySource] to EncryptableEnumerablePropertySourceWrapper
+2023-03-10 23:59:27,756 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat initialized with port(s): 8090 (http)
+2023-03-10 23:59:27,757 [main] INFO  o.apache.catalina.core.StandardService             - Starting service [Tomcat]
+2023-03-10 23:59:27,757 [main] INFO  org.apache.catalina.core.StandardEngine            - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-03-10 23:59:27,776 [main] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/]               - Initializing Spring embedded WebApplicationContext
+2023-03-10 23:59:27,776 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 90 ms
+2023-03-10 23:59:27,785 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver                - Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-03-10 23:59:28,040 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat started on port(s): 8090 (http) with context path ''
+2023-03-10 23:59:28,040 [main] INFO  c.u.j.c.RefreshScopeRefreshedEventListener         - Refreshing cached encryptable property sources on ServletWebServerInitializedEvent
+2023-03-10 23:59:28,040 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source servletContextInitParams refreshed
+2023-03-10 23:59:28,040 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source systemProperties refreshed
+2023-03-10 23:59:28,040 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source systemEnvironment refreshed
+2023-03-10 23:59:28,040 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source random refreshed
+2023-03-10 23:59:28,040 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' refreshed
+2023-03-10 23:59:28,040 [main] INFO  c.u.j.c.CachingDelegateEncryptablePropertySource   - Property Source devtools refreshed
+2023-03-10 23:59:28,041 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Converting PropertySource server.ports [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-10 23:59:28,041 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+2023-03-10 23:59:28,041 [main] INFO  c.u.j.EncryptablePropertySourceConverter           - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-03-10 23:59:28,051 [main] INFO  c.e.site.admin.SiteAdminApplication                - Started SiteAdminApplication in 8.912 seconds (process running for 10.912)

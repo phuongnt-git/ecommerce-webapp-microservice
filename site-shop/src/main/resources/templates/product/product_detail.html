@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<head th:replace="~{fragments :: page_head(${pageTitle}, 'none')}" />
 <body>
 <div class="container-fluid">
-	<div th:replace="navigation :: header_menu"></div>
-	<div th:replace="navigation :: search_nav"></div>
-	<div th:replace="breadcrumb :: content"></div>
+	<div th:replace="~{navigation :: header_menu}"></div>
+	<div th:replace="~{navigation :: search_nav}"></div>
+	<div th:replace="~{breadcrumb :: content}"></div>
 
 	<div class="row">
 		<div class="col-sm">
@@ -33,12 +33,12 @@
 			</div>
 			<div>
 				List Price:
-				<span th:if="${product.discountPercent <= 0}"><div th:replace="product/product_fragment :: price_fragment(${product.price})"></div></span>
-				<del th:if="${product.discountPercent > 0}"><span><div th:replace="product/product_fragment :: price_fragment(${product.price})"></div></span></del>
+				<span th:if="${product.discountPercent <= 0}"><div th:replace="~{product/product_fragment :: price_fragment(${product.price})}"></div></span>
+				<del th:if="${product.discountPercent > 0}"><span><div th:replace="~{product/product_fragment :: price_fragment(${product.price})}"></div></span></del>
 			</div>
 			<div th:if="${product.discountPercent > 0}">
 				Price:
-				<span style="font-size: larger; color: darkred"><div th:replace="product/product_fragment :: price_fragment(${product.discountPrice})"></div></span>
+				<span style="font-size: larger; color: darkred"><div th:replace="~{product/product_fragment :: price_fragment(${product.discountPrice})}"></div></span>
 				([[${#numbers.formatDecimal(product.discountPercent, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]] % off)
 			</div>
 			<div>&nbsp;</div>
@@ -51,7 +51,7 @@
 			</div>
 			
 			<th:block th:if="${product.inStock}">
-			<div th:replace="cart/quantity_control :: quantity_control(1, ${product.id})"></div>
+			<div th:replace="~{cart/quantity_control :: quantity_control(1, ${product.id})}"></div>
 			<div class="mt-3">
 				<input type="button" value="Add to Cart" id="buttonAdd2Cart" class="btn btn-primary" />
 			</div>
@@ -83,9 +83,9 @@
 			</th:block>
 		</div>
 	</div>
-	<div th:replace="product/images_carousel :: content"></div>
-	<div th:replace="fragments :: modal_dialog"></div>	
-	<div th:replace="navigation :: footer_menu"></div>
+	<div th:replace="~{product/images_carousel :: content}"></div>
+	<div th:replace="~{fragments :: modal_dialog}"></div>
+	<div th:replace="~{navigation :: footer_menu}"></div>
 </div>	
 <script type="text/javascript">
 	contextPath = "[[@{/}]]";

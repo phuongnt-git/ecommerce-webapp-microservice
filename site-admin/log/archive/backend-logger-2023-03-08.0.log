@@ -1034,7 +1034,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [shipp
 
 2023-03-08 10:36:50,672 [http-nio-8080-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                - Servlet.service() for servlet [dispatcherServlet] in context with path [/ecommerce/admin] threw exception
 java.io.IOException: Could not save file my-shop.png
-	at com.ecommerce.site.admin.utils.FileUploadUtils.saveFile(FileUploadUtils.java:32)
+	at com.ecommerce.site.admin.util.FileUploadUtil.saveFile(FileUploadUtils.java:32)
 	at com.ecommerce.site.admin.controller.SettingController.saveSiteLogo(SettingController.java:76)
 	at com.ecommerce.site.admin.controller.SettingController.saveGeneralSettings(SettingController.java:60)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1177,7 +1177,7 @@ Caused by: java.nio.file.FileSystemException: ..\images\site-logo\my-shop.png: T
 	at java.base/sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110)
 	at java.base/java.nio.file.Files.deleteIfExists(Files.java:1191)
 	at java.base/java.nio.file.Files.copy(Files.java:3148)
-	at com.ecommerce.site.admin.utils.FileUploadUtils.saveFile(FileUploadUtils.java:30)
+	at com.ecommerce.site.admin.util.FileUploadUtil.saveFile(FileUploadUtils.java:30)
 	... 134 common frames omitted
 2023-03-08 10:36:51,382 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver        - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
 2023-03-08 12:59:40,615 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'

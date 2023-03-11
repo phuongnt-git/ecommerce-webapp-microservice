@@ -10,7 +10,7 @@ import com.ecommerce.site.admin.helper.PagingAndSortingHelper;
 import com.ecommerce.site.admin.annotation.PagingAndSortingParam;
 import com.ecommerce.site.admin.security.UserDetailsImpl;
 import com.ecommerce.site.admin.service.UserService;
-import com.ecommerce.site.admin.utils.FileUploadUtils;
+import com.ecommerce.site.admin.util.FileUploadUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.jetbrains.annotations.NotNull;
@@ -81,8 +81,8 @@ public class UserController {
 
             String uploadDir = USER_PHOTOS_DIR + "/" + savedUser.getId();
 
-            FileUploadUtils.cleanDir(uploadDir);
-            FileUploadUtils.saveFile(uploadDir, fileName, multipartFile);
+            FileUploadUtil.cleanDir(uploadDir);
+            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         } else {
             if (user.getPhotos().isEmpty()) {
                 user.setPhotos(null);
@@ -127,7 +127,7 @@ public class UserController {
             User user = userService.findById(id);
             if (!user.hasRole("Admin")) {
                 if (user.getPhotos() != null) {
-                    FileUploadUtils.removeDir(USER_PHOTOS_DIR + "/" + id);
+                    FileUploadUtil.removeDir(USER_PHOTOS_DIR + "/" + id);
                 }
 
                 userService.deleteById(id);
@@ -217,8 +217,8 @@ public class UserController {
 
             String uploadDir = USER_PHOTOS_DIR + "/" + savedUser.getId();
 
-            FileUploadUtils.cleanDir(uploadDir);
-            FileUploadUtils.saveFile(uploadDir, fileName, multipartFile);
+            FileUploadUtil.cleanDir(uploadDir);
+            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         } else {
             if (user.getPhotos().isEmpty()) {
                 user.setPhotos(null);

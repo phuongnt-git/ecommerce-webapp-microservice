@@ -2,7 +2,7 @@ package com.ecommerce.site.admin.helper;
 
 import com.ecommerce.site.admin.model.entity.Product;
 import com.ecommerce.site.admin.model.entity.ProductImage;
-import com.ecommerce.site.admin.utils.FileUploadUtils;
+import com.ecommerce.site.admin.util.FileUploadUtil;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -89,8 +89,8 @@ public class ProductSaveHelper {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(mainImageMultipart.getOriginalFilename()));
             String uploadDir = "../images/product-images/" + savedProduct.getId();
 
-            FileUploadUtils.cleanDir(uploadDir);
-            FileUploadUtils.saveFile(uploadDir, fileName, mainImageMultipart);
+            FileUploadUtil.cleanDir(uploadDir);
+            FileUploadUtil.saveFile(uploadDir, fileName, mainImageMultipart);
         }
 
         if (extraImageMultipart.length > 0) {
@@ -102,7 +102,7 @@ public class ProductSaveHelper {
                 }
 
                 String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
-                FileUploadUtils.saveFile(uploadDir, fileName, multipartFile);
+                FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
             }
         }
 

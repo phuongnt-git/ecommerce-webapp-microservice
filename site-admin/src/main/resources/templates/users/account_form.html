@@ -76,7 +76,7 @@
                                     <div class="col-sm-8">
                                         <input th:field="*{photos}" type="hidden"/>
                                         <input accept="image/png, image/jpeg" class="mb-2" id="fileImage" name="image" type="file"/>
-                                        <img alt="Photos preview" class="img-fluid" id="thumbnail" src="" th:src="@{${user.photosPath}}"/>
+                                        <img alt="Photos preview" class="img-fluid" id="thumbnail" src="" th:src="@{${user.photosImagePath}}"/>
                                     </div>
                                 </div>
 

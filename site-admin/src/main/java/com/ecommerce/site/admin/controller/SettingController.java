@@ -3,7 +3,7 @@ package com.ecommerce.site.admin.controller;
 import com.ecommerce.site.admin.repository.CurrencyRepository;
 import com.ecommerce.site.admin.service.SettingBagService;
 import com.ecommerce.site.admin.service.SettingService;
-import com.ecommerce.site.admin.utils.FileUploadUtils;
+import com.ecommerce.site.admin.util.FileUploadUtil;
 import com.ecommerce.site.admin.model.entity.Currency;
 import com.ecommerce.site.admin.model.entity.Setting;
 import jakarta.servlet.http.HttpServletRequest;
@@ -69,11 +69,11 @@ public class SettingController {
     private void saveSiteLogo(@NotNull MultipartFile multipartFile, SettingBagService settingBag) throws IOException {
         if (!multipartFile.isEmpty()) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
-            String value = "/images/site-logo/" + fileName;
+            String value = "/site-logo/" + fileName;
             settingBag.updateSiteLogo(value);
 
-            FileUploadUtils.cleanDir(SITE_LOGO_DIR);
-            FileUploadUtils.saveFile(SITE_LOGO_DIR, fileName, multipartFile);
+            FileUploadUtil.cleanDir(SITE_LOGO_DIR);
+            FileUploadUtil.saveFile(SITE_LOGO_DIR, fileName, multipartFile);
         }
     }
 
